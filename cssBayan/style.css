@@ -149,12 +149,10 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    width: 3px;
-    height: 3px;
     border: none;
     transform: rotate(45deg);    
     background-color: transparent;
-    padding: 5px;
+    padding: 0.5rem;
     cursor: pointer;
     margin-right: 1.5rem;
     opacity: 1;
