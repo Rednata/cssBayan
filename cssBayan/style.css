@@ -21,3 +21,169 @@ body {
   max-width: 1440px;
   margin: 100px auto;
 }
+
+.title {
+  text-align: center;
+  font-size: 3.5rem;
+
+}
+
+.bayan {
+  display: flex;
+  flex-direction: column;  
+  margin: 0 auto;
+  max-width: 500px;       
+}
+
+.bayan__item {  
+  border-top: 1px solid var(--border-color);    
+}
+
+.bayan__label {
+  display: grid;
+  justify-content: space-between;
+  align-items: flex-start;
+  row-gap: 2rem;
+  cursor: pointer;
+  padding: 1.5rem;
+  height: 3rem;
+  overflow: hidden;
+  transition: height 0.8s ease;
+
+}
+
+.bayan__title {  
+  transition: color 0.2s ease;
+  align-self: baseline;  
+}
+
+.bayan:hover .btn {
+  opacity: 1;
+  visibility: visible;
+  
+}
+
+.bayan:hover .bayan__title {  
+  color: var(--main-color);
+}
+
+.bayan__label:hover .btn {  
+  transform: rotate(0);
+}
+
+.bayan__label:hover .bayan__img {  
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.bayan__label:hover {  
+  height: 320px;
+}
+
+.bayan__title {
+  grid-column: 1 / 2;
+  grid-row: 1 / 1;
+}
+
+.bayan__input {
+  grid-column: 3 / 4;
+  grid-row: 1 / 1;
+
+  appearance: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bayan__img {  
+  display: block;
+  grid-column: 1 / 4;
+  grid-row: 2 / 2;
+  width: 50%;  
+  height: auto;    
+  visibility: hidden;
+  margin: 0 auto;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s, visibility 0.5s, transform 0.8s;   
+}
+
+.bayan__img1 {  
+  display: block;
+  grid-column: 1 / 4;
+  grid-row: 2 / 2;
+  display: block;
+  width: 50%;  
+  justify-self: center;
+  visibility: hidden;
+  margin-top: 50px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s, visibility 0.5s, transform 0.8s;   
+}
+
+.bayan__label:has(.bayan__input:checked) {  
+  height: 320px;
+}
+
+.bayan__input:checked~.bayan__img {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.bayan__input:checked~.bayan__img1 {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.bayan__input:checked~.btn {
+  transform: rotate(0);  
+}
+
+.bayan__label:active .btn {
+  background-image: url("assets/cross-mark-svgrepo-com_color.svg");  
+}
+
+.bayan__label:active .bayan__title {
+  color: var(--main-accent-color);
+}
+
+.bayan__label:active .bayan__img {
+  filter: sepia(0.5);  
+}
+
+.bayan__label:has(.bayan__input:checked) .bayan__title {  
+  color: var(--main-color);
+}
+
+@media(min-width: 320px) {
+  .btn {
+    grid-column: 3 / 3;
+    grid-row: 1 / 1;
+    margin-top: 13px;
+    background-image: url("assets/cross-mark-svgrepo-com.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 3px;
+    height: 3px;
+    border: none;
+    transform: rotate(45deg);    
+    background-color: transparent;
+    padding: 5px;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.3s ease, opacity 0.2s ease, visibility 0.2s ease;
+  }
+}
+
+@media(min-width: 860px) {
+  .btn {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
