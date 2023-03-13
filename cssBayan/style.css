@@ -85,29 +85,6 @@ body {
   padding: 2rem; 
 }
 
-.bayan:hover .btn {
-  opacity: 1;
-  visibility: visible;  
-}
-
-.bayan:hover .bayan__title {  
-  color: var(--main-color);
-}
-
-.bayan__label:hover {  
-  height: 30rem;
-}
-
-.bayan__label:hover .btn {  
-  transform: rotate(0);
-}
-
-.bayan__label:hover .bayan__img {  
-  visibility: visible;
-  opacity: 1;  
-  transform: scale(1.2);
-}
-
 .bayan__label:has(.bayan__input:checked) {    
   height: 58vw;  
 }
@@ -161,69 +138,92 @@ body {
   }
 }
 
-@media(min-width: 460px) {
-  .container {        
-    padding: 0 6rem;   
-  }
-  .bayan__label:has(.bayan__input:checked),
-  .bayan__label:hover {   
-    height: 55vw;  
-  }
-  .bayan__img {  
-    width: 60%;
-    padding: 2rem; 
-  }
-}
 
-@media(min-width: 600px) {
-  .container {        
-    padding: 0 8rem;    
+  @media(min-width: 460px) {
+    .container {        
+      padding: 0 6rem;   
+    }
+    .bayan__label:has(.bayan__input:checked) {   
+      height: 55vw;  
+    }
+    .bayan__img {  
+      width: 60%;
+      padding: 2rem; 
+    }
   }
-  .bayan {
-    max-width: 80%;
+  
+  @media(min-width: 600px) {
+    .container {        
+      padding: 0 8rem;    
+    }
+    .bayan {
+      max-width: 80%;
+    }
+    .bayan__label:has(.bayan__input:checked) {   
+      height: 52vw;  
+    }
+    .bayan__img {  
+      width: 40vw;
+    }
   }
-  .bayan__label:has(.bayan__input:checked),
-  .bayan__label:hover {   
-    height: 52vw;  
+  
+  @media(min-width: 800px) {
+  .title {
+    font-size: 4rem;
   }
-  .bayan__img {  
-    width: 40vw;
+    .bayan {
+      max-width: 50rem;
+    }
+    .bayan__label {
+      grid-template-rows: 3rem 1fr;
+      height: 6rem;
+    }  
+    .bayan__label:has(.bayan__input:checked) {   
+      height: 38rem;
+    }  
+    .bayan__title {
+      font-size: 3rem;
+    }
+    .bayan__img {  
+      max-width: 65%;    
+      padding: 2.5rem; 
+    }
   }
-}
+  
+  @media(min-width: 1000px) {
+    .btn {
+      visibility: hidden;
+      opacity: 0;
+    }
+    .bayan:hover .btn {
+      opacity: 1;
+      visibility: visible;  
+    }
+    .title {      
+      font-size: 4.5rem; 
+    }
+    .bayan__title {
+      font-size: 3.5rem;
+    }
+  
+    .bayan:hover .bayan__title {  
+      color: var(--main-color);
+    }
+  
+    .bayan__label:hover { 
+      height: 38rem;       
+    }
+    
+    .bayan__label:hover .btn {  
+      transform: rotate(0);
+    }
+    
+    .bayan__label:hover .bayan__img {  
+      visibility: visible;
+      opacity: 1;  
+      transform: scale(1.2);
+    }
+  }
 
-@media(min-width: 830px) {
-.title {
-  font-size: 4rem;
-}
-  .bayan {
-    max-width: 50rem;
-  }
-  .bayan__label {
-    grid-template-rows: 3rem 1fr;
-    height: 6rem;
-  }  
-  .bayan__label:has(.bayan__input:checked),
-  .bayan__label:hover {   
-    height: 38rem;
-  }  
-  .bayan__title {
-    font-size: 3rem;
-  }
-  .bayan__img {  
-    max-width: 65%;    
-    padding: 2.5rem; 
-  }
-}
-
-@media(min-width: 1200px) {
-  .btn {
-    visibility: hidden;
-    opacity: 0;
-  }
-  .bayan:hover .btn {
-    opacity: 1;
-    visibility: visible;  
-  }
-}
 
 
