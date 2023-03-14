@@ -1,0 +1,245 @@
+p {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-gutter: stable;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;  
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2rem;
+  background-color: var(--bgc);
+  color: var(--main-accent-color);
+}
+
+.container {    
+  max-width: 192rem;
+  padding: 0 2rem;
+  margin: 4rem auto;  
+}
+
+.title {  
+  text-align: center;
+  font-size: 2.5rem;  
+  padding-bottom: 2rem;
+}
+
+.bayan {
+  display: flex;
+  flex-direction: column;  
+  margin: 0 auto;  
+}
+
+.bayan__item {  
+  border-top: 1px solid var(--border-color);    
+}
+
+.bayan__label {
+  display: grid;
+  grid-template-rows: 1.5rem 1fr;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 1rem;
+  cursor: pointer;
+  padding: 1.5rem;
+  height: 4rem;
+  overflow: hidden;
+  transition: height 0.8s ease;
+}
+
+.bayan__title {  
+  grid-column: 1 / 2;
+  grid-row: 1 / 1;
+  transition: color 0.2s ease;
+}
+
+.bayan__input {
+  grid-column: 3 / 3;
+  grid-row: 1 / 1;
+  appearance: none;
+  margin: 0;
+  padding: 0;  
+  align-self: baseline;
+}
+
+.bayan__img {  
+  display: block;
+  grid-column: 1 / 4;
+  grid-row: 2 / 2;  
+  width: 55%;
+  visibility: hidden;
+  margin: 0 auto;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.5s, visibility 0.5s, transform 0.8s;  
+  align-self: center;
+  padding: 2rem; 
+}
+
+.bayan__label:has(.bayan__input:checked) {    
+  height: 58vw;  
+}
+
+.bayan__input:checked~.btn {
+  transform: rotate(0);  
+}
+
+.bayan__input:checked~.bayan__img {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.bayan__label:active .btn {
+  background-image: url("assets/cross-mark-svgrepo-com_color.svg");  
+}
+
+.bayan__label:active .bayan__title {
+  color: var(--main-accent-color);
+}
+
+.bayan__label:active .bayan__img {
+  filter: contrast(0.5);  
+}
+
+.bayan__label:has(.bayan__input:checked) .bayan__title {  
+  color: var(--main-color);
+}
+
+@media(min-width: 320px) {
+  .bayan {
+    max-width: 95vw;
+  }
+  .btn {
+    grid-column: 3 / 3;
+    grid-row: 1 / 1;
+    background-image: url("assets/cross-mark-svgrepo-com.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: none;
+    transform: rotate(45deg);    
+    background-color: transparent;
+    padding: 0.5rem;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.3s ease, opacity 0.2s ease, visibility 0.2s ease;
+  }
+}
+
+
+  @media(min-width: 460px) {
+    .container {        
+      padding: 0 6rem;   
+    }
+    .bayan__label:has(.bayan__input:checked) {   
+      height: 55vw;  
+    }
+    .bayan__img {  
+      width: 60%;
+      padding: 2rem; 
+    }
+  }
+  
+  @media(min-width: 600px) {
+    .container {        
+      padding: 0 8rem;    
+    }
+    .bayan {
+      max-width: 80%;
+    }
+    .bayan__label:has(.bayan__input:checked) {   
+      height: 52vw;  
+    }
+    .bayan__img {  
+      width: 40vw;
+    }
+  }
+  
+  @media(min-width: 800px) {
+  .title {
+    font-size: 4rem;
+  }
+    .bayan {
+      max-width: 50rem;
+    }
+    .bayan__label {
+      grid-template-rows: 3rem 1fr;
+      height: 6rem;
+    }  
+    .bayan__label:has(.bayan__input:checked) {   
+      height: 38rem;
+    }  
+    .bayan__title {
+      font-size: 3rem;
+    }
+    .bayan__img {  
+      max-width: 65%;    
+      padding: 2.5rem; 
+    }
+  }
+  
+  @media(min-width: 1000px) {
+    .btn {
+      visibility: hidden;
+      opacity: 0;
+    }
+  
+    .title {      
+      font-size: 4.5rem; 
+    }
+    .bayan__title {
+      font-size: 3.5rem;
+  }
+}
+
+@media (hover: hover) {
+  .bayan:hover .bayan__title {  
+    color: var(--main-color);
+  }
+
+  .bayan__label:active .bayan__title {
+    color: var(--main-accent-color);
+  }
+
+  .bayan__label:hover { 
+    height: 38rem;       
+  }
+  
+  .bayan__label:hover .btn {  
+    transform: rotate(0);
+  }
+  
+  .bayan__label:hover .bayan__img {  
+    visibility: visible;
+    opacity: 1;  
+    transform: scale(1.2);
+  }
+  .bayan:hover .btn {
+    opacity: 1;
+    visibility: visible;  
+  }
+}
+
+@media(hover: none) {
+  .btn {
+    opacity: 1;
+    visibility: visible;  
+  }
+}
+
+
+
+
+
