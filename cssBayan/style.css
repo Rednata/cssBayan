@@ -195,35 +195,51 @@ body {
       visibility: hidden;
       opacity: 0;
     }
-    .bayan:hover .btn {
-      opacity: 1;
-      visibility: visible;  
-    }
+  
     .title {      
       font-size: 4.5rem; 
     }
     .bayan__title {
       font-size: 3.5rem;
-    }
-  
-    .bayan:hover .bayan__title {  
-      color: var(--main-color);
-    }
-  
-    .bayan__label:hover { 
-      height: 38rem;       
-    }
-    
-    .bayan__label:hover .btn {  
-      transform: rotate(0);
-    }
-    
-    .bayan__label:hover .bayan__img {  
-      visibility: visible;
-      opacity: 1;  
-      transform: scale(1.2);
-    }
   }
+}
+
+@media (hover: hover) {
+  .bayan:hover .bayan__title {  
+    color: var(--main-color);
+  }
+
+  .bayan__label:active .bayan__title {
+    color: var(--main-accent-color);
+  }
+
+  .bayan__label:hover { 
+    height: 38rem;       
+  }
+  
+  .bayan__label:hover .btn {  
+    transform: rotate(0);
+  }
+  
+  .bayan__label:hover .bayan__img {  
+    visibility: visible;
+    opacity: 1;  
+    transform: scale(1.2);
+  }
+  .bayan:hover .btn {
+    opacity: 1;
+    visibility: visible;  
+  }
+}
+
+@media(hover: none) {
+  .btn {
+    opacity: 1;
+    visibility: visible;  
+  }
+}
+
+
 
 
 
